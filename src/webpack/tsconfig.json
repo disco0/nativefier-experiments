@@ -1,0 +1,8 @@
+{
+    "extends": "../../tsconfig.json",
+    "include": ["./", "../injects/injection.ts"],
+    "compilerOptions": {
+        "target": "ES6",
+        "moduleResolution": "node"
+    }
+}

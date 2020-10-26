@@ -1,0 +1,17 @@
+root = true
+
+[*]
+[*.js*]
+end_of_line = lf
+indent_size = 4
+indent_style = space
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[tsconfig.json]
+[package*]
+indent_size = 2
+
+[*.styl]
+indent_style = tab
+indent_size = 4

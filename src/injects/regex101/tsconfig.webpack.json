@@ -1,0 +1,26 @@
+{
+    "include": [
+        "./index.ts",
+        "./*.ts"
+    ],
+    "exclude":
+    [
+        "../"
+    ],
+    "compilerOptions":
+    {
+        "baseUrl": "./",
+        "module":                       "commonjs",
+        "target":                       "ES2019",
+        "esModuleInterop":              true,
+        "resolveJsonModule":            true,
+        "moduleResolution":             "node",
+        "allowSyntheticDefaultImports": true,
+        "pretty":                       true,
+        "listEmittedFiles":             true,
+        "typeRoots":
+        [
+            "../../../node_modules/@types"
+        ]
+    }
+}

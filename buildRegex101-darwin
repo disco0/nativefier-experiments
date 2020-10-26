@@ -1,0 +1,27 @@
+#!zsh
+function buildRegex101()
+{
+  local base=~/git.local/webapps
+  
+    {
+        # prepare
+        builtin pushd $base/build && {
+            local prev=( ./Regex101-*(/N) )
+            (( $#prev > 0 )) && rm -rvf $prev
+        } && {
+            # build 
+            nativefier https://regex101.com/ \
+                --name "Regex101" \
+                --title-bar-style hidden \
+                --inject ./src/injects/regex101/webpack/regex101.js \
+                --fast-quit \
+                --insecure \
+                --internal-urls '.*' \
+                --ignore-certificate 
+        } && open ./Regex101-darwin-x64/Regex101.app 
+    } || print -P "%F{1Failed to build app.%f";
+    cd $base
+}
+
+buildRegex101
+ #  --browserwindow-options '{"trafficLightPosition": {"x": 120, "y": 25}}'

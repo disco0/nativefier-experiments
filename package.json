@@ -1,0 +1,53 @@
+{
+  "name": "nativefier-sites",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "ts-node --project ./src/tsconfig.json --prefer-ts-exts --pretty ./src",
+    "build:all:tsconfig": "yarn clean && ts-node --pretty --prefer-ts-exts --project ./src/tsconfig.json ./src",
+    "build:all": "ts-node --files ./src -a",
+    "build:current:tsconfig": "ts-node --project ./src/tsconfig.json ./src",
+    "build:current": "ts-node --files ./src ",
+    "build:ts-node": "ts-node --project ./src/tsconfig.json --prefer-ts-exts --pretty ./src ",
+    "clean": "rm -rf ./build",
+    "build:clean": "yarn clean && yarn build:all",
+    "webpack:ts:env": "cross-env TS_NODE_PROJECT=\"tsconfig-for-webpack-config.json\"",
+    "build:regex101:injects:webpack": "cd src/injects/regex101 && tsc ./webpack.config.ts && webpack --config ./webpack.config.js --mode development",
+    "build:regex101": "yarn clean && yarn build:regex101:injects:webpack && yarn build --schemas regex --max 1 && yarn open:regex101:darwin",
+    "open:regex101:darwin": "open build/Regex101-darwin-x64/Regex101.app",
+    "injects:regex101:enter": "pushd src/injects/regex101",
+    "injects:regex101:build": "yarn injects:regex101:enter && "
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@tsconfig/node12": "^1.0.7",
+    "@types/debug": "^4.1.5",
+    "@types/electron": "^1.6.10",
+    "@types/node": "^14.14.2",
+    "@types/webpack": "^4.41.23",
+    "@types/yargs": "^15.0.7",
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^4.3.0",
+    "debug": "^4.2.0",
+    "nativefier": "^10.1.0",
+    "style-loader": "^2.0.0",
+    "stylus-native-loader": "^1.4.1",
+    "template-literal-queryselectors": "disco0/template-literal-queryselectors#wide-typesVersions",
+    "ts-loader": "^8.0.4",
+    "ts-node": "^9.0.0",
+    "tsconfig-paths": "^3.9.0",
+    "tsconfig-paths-webpack-plugin": "^3.3.0",
+    "typescript": "^4.1.0-dev.20201025",
+    "webpack": "^4.44.2",
+    "yargs": "^16.0.3"
+  },
+  "dependencies": {
+    "@types/copy-webpack-plugin": "^6.0.0",
+    "ansi-escapes": "sindresorhus/ansi-escapes",
+    "chalk": "^4.1.0",
+    "copy-webpack-plugin": "^6.2.0"
+  }
+}

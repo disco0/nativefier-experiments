@@ -1,0 +1,49 @@
+{
+    "extends": "@tsconfig/node12/tsconfig.json",
+    "exclude": [ "../node_modules/", "./build", "./injects/**/webpack" ],
+    "include":
+    [
+        "./globals.d.ts",
+        "./*.ts",
+        "./**/*.ts",
+    ],
+    "compilerOptions":
+    {
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+
+        "module": "CommonJS",
+        "moduleResolution": "node",
+
+        "skipLibCheck": true,
+
+        "resolveJsonModule": true,
+
+        "typeRoots": [
+            "../node_modules/@types"
+        ]
+    },
+    "ts-node":
+    {
+        "preferTsExts": true,
+        "files": true,
+        "pretty": true,
+        "compilerOptions":
+        {
+            "esModuleInterop": true,
+            "diagnostics": true,
+            "listEmittedFiles": true,
+            "target": "ES2019",
+            "module": "CommonJS",
+            "allowSyntheticDefaultImports": true,
+            "moduleResolution": "node",
+            "typeRoots":
+            [
+                // "./@types/",
+                "../node_modules",
+                "../node_modules/@types",
+            ],
+            "skipLibCheck": true
+        }
+    }
+}

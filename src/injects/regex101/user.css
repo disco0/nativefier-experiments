@@ -1,0 +1,38 @@
+:root
+{
+    --monospace-font: Iosevka Expanded, Iosevka Extended, Iosevka-extended, Iosevka Term Extended, Iosevka, monospace;
+    --whitespace-char-opacity: 0.1;
+}
+
+.CodeMirror-show-whitespace > .CodeMirror
+{
+    scrollbar-width: none;
+    font-family: var(--monospace-font)
+}
+.CodeMirror-show-whitespace > .CodeMirror::-webkit-scrollbar
+{
+    display: none;
+}
+.CodeMirror-show-whitespace > .CodeMirror [class$="scrollbar"]
+{
+    visibility: hidden !important;
+}
+.CodeMirror-show-whitespace > .CodeMirror span.cm-overlay.cm-space:before
+{
+    content: "" ․ "" !important;
+    color: #b9b9b9 !important;
+    opacity: 20% !important;
+    font-weight: 100 !important;
+}
+.CodeMirror-show-whitespace > .CodeMirror .CodeMirror-line:not(:last-child) > span:after
+{
+    content: "⁋" !important;
+    color: #ddd !important;
+    opacity: var(--whitespace-char-opacity) !important;
+    font-weight: 100 !important;
+}
+
+#regex-app > div > header > a.darwin
+{
+    padding-top: 27px
+}

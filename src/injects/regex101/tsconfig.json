@@ -1,0 +1,28 @@
+{
+    "extends": "../../tsconfig.json",
+    "exclude":
+    [
+        "./webpack/*.js"
+    ],
+    "include":
+    [
+        "./*.ts",
+        "./*.js"
+    ],
+    "compilerOptions":
+    {
+        "allowUmdGlobalAccess": true,
+        "checkJs": true,
+        "pretty": true,
+        "noEmit": true,
+        "resolveJsonModule": true,
+    },
+    "typeAcquisition":
+    {
+        "enable": true,
+        "include": [
+            "template-literal-queryselectors",
+            "electron"
+        ]
+    },
+}

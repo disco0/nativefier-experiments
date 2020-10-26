@@ -1,0 +1,65 @@
+{
+    "editor.rulers": [
+      100,
+      120
+    ],
+    "javascript.implicitProjectConfig.checkJs": true,
+    "editor.semanticHighlighting.enabled": true,
+    "editor.semanticTokenColorCustomizations": {
+        "rules": {
+            "variable":
+            {
+                "foreground": "#318495"
+            },
+            "variable.readonly":
+            {
+                "foreground": "#0d4891",
+            },
+            "*.defaultLibrary":
+            {
+                "bold": true
+            },
+            "variable.defaultLibrary":
+            {
+                "foreground": "#C00",
+            },
+            "member.defaultLibrary":
+            {
+                "foreground": "#00C",
+            },
+            "property.defaultLibrary":
+            {
+                "fontStyle": ""
+            },
+            "*.declaration":
+            {
+                // "foreground": "#C04",
+                "italic": true,
+                // "bold": true
+            },
+            "function":
+            {
+                "fontStyle": "",
+                "foreground": "#0000CC",
+                // "bold": false
+            },
+            "function.local":
+            {
+                "bold": false
+            },
+            "function.declaration":
+            {
+                "bold": true,
+                "italic": true
+            },
+            "enumMember.declaration":
+            {
+                "bold": false,
+                "italic": false
+            }
+        }
+    },
+    "workbench.colorCustomizations": {
+        "[WinClassic]": {}
+    },
+}
